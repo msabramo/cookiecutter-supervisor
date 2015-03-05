@@ -1,0 +1,17 @@
+{
+	"program_name": "app",
+  "command": "gunicorn --bind 0.0.0.0:$PORT --paste development.ini",
+  "numprocs": 1,
+  "process_name": "%(program_name)s%(process_num)02d",
+  "directory": "/opt/webapp/{{ cookiecutter.program_name }}",
+  "log_directory": "/var/log/sm",
+  "newrelic_environment": "NEW_RELIC_CONFIG_FILE=\"{{ cookiecutter.directory }}/etc/newrelic.ini\"",
+  "environment": "{{ cookiecutter.newrelic_environment }}",
+  "redirect_stderr": "true",
+  "autostart": "true",
+  "autorestart": "true",
+	"startsecs": 30,
+  "priority": 12,
+	"stopwaitsecs": 10,
+	"stopsignal": "QUIT"
+}
