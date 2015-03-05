@@ -1,5 +1,5 @@
 {
-	"program_name": "app",
+  "program_name": "app",
   "command": "gunicorn --bind 0.0.0.0:$PORT --paste development.ini",
   "numprocs": 1,
   "process_name": "%(program_name)s%(process_num)02d",
@@ -10,8 +10,8 @@
   "redirect_stderr": "true",
   "autostart": "true",
   "autorestart": "true",
-	"startsecs": 30,
+  "startsecs": 30,
   "priority": 12,
-	"stopwaitsecs": 10,
-	"stopsignal": "QUIT"
+  "stopwaitsecs": 10,
+  "stopsignal": "QUIT"
 }
